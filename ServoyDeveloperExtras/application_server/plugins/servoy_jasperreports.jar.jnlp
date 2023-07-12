@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="%%serverURL%%" href="/servoy-client/plugins/servoy_jasperreports.jar.jnlp">
+	<information>
+		<title>Servoy Client Plugins</title>
+		<vendor>Servoy and Others</vendor>
+	</information>
+	<resources> 
+		<j2se version="1.6+"/>
+		<jar href="/plugins/servoy_jasperreports.jar" download="eager" version="%%version%%"/>
+		<jar href="/plugins/servoy_jasperreports/commons-io.jar" download="lazy" part="commons-io" version="%%version%%"/>
+			<package name="org.apache.commons.io.*" part="commons-io" recursive="true"/>
+		<extension href="/plugins/servoy_jasperreports_commons.jar.jnlp" name="servoy_jasperreports_commons.jar" version="%%version%%"/>
+		<jar href="/plugins/servoy_jasperreports/jasperreports-6.12.2.jar" download="eager"/>
+		<jar href="/plugins/servoy_jasperreports/commons-beanutils-1.9.4.jar" download="lazy" part="commons-beanutils" version="1.9.4"/> 
+			<package name="org.apache.commons.beanutils.*" part="commons-beanutils" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-collections-3.2.2.jar" download="lazy" part="commons-collections3" version="3.2.2"/> 
+			<package name="org.apache.commons.collections.*" part="commons-collections3" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-digester-2.1.jar" download="lazy" part="commons-digester" version="2.1"/> 
+			<package name="org.apache.commons.digester.*" part="commons-digester" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-lang-2.6.jar" download="lazy" part="commons-lang" version="2.6"/> 
+			<package name="org.apache.commons.lang.*" part="commons-lang" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-math3-3.6.1.jar" download="lazy" part="commons-math3" version="3.6.1"/> 
+			<package name="org.apache.commons.math3.*" part="commons-math3" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-logging-1.1.1.jar" download="lazy" part="commons-logging" version="1.1.1"/> 
+			<package name="org.apache.commons.logging.*" part="commons-logging" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/groovy-all-2.4.16.jar" download="lazy" part="groovy" version="2.4.16"/> 
+			<package name="org.codehaus.groovy.*" part="groovy" recursive="true"/> 
+			<package name="groovy.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarantlr.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarasm.asm.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarcommonscli.*" part="groovy" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/itext-2.1.7.js7.jar" download="lazy" part="itext" version="2.1.7.js7"/> 
+			<package name="com.lowagie.*" part="itext" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/jackson-core-2.10.0.jar" download="lazy" part="jackson-core" version="2.10.0"/> 
+			<package name="com.fasterxml.jackson.core.*" part="jackson-core" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/jackson-databind-2.10.0.jar" download="lazy" part="jackson-databind" version="2.10.0"/> 
+			<package name="com.fasterxml.jackson.databind.*" part="jackson-databind" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/ecj-4.4.2.jar" download="lazy" part="jdt-compiler" version="4.4.2"/> 
+			<package name="org.eclipse.jdt.*" part="jdt-compiler" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/poi-4.1.1.jar" download="lazy" part="poi" version="4.1.1"/> 
+			<package name="org.apache.poi.*" part="poi" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/serializer-2.7.2.jar" download="lazy" part="serializer" version="2.7.2"/> 
+			<package name="org.apache.xml.serializer.*" part="serializer" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xalan-2.7.2.jar" download="lazy" part="xalan" version="2.7.2"/> 
+			<package name="org.apache.*" part="xalan" recursive="true"/> 
+			<package name="java_cup.runtime.*" part="xalan" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xercesImpl-2.9.1.jar" download="lazy" part="xercesImpl" version="2.9.1"/> 
+			<package name="org.apache.html.dom.*" part="xercesImpl" recursive="true"/> 
+			<package name="org.apache.wml.*" part="xercesImpl" recursive="true"/> 
+			<package name="org.apache.xerces.*" part="xercesImpl" recursive="true"/> 
+			<package name="org.apache.xml.serialize.*" part="xercesImpl" recursive="true"/> 
+			<package name="org.w3c.dom.html.HTMLDOMImplementation" part="xercesImpl" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xml-apis-1.3.04.jar" download="lazy" part="xml-apis" version="1.3.04"/> 
+			<package name="javax.xml.*" part="xml-apis" recursive="true"/> 
+			<package name="org.w3c.dom.*" part="xml-apis" recursive="true"/> 
+			<package name="org.xml.sax.*" part="xml-apis" recursive="true"/> 
+			<package name="org.apache.xmlcommons.Version" part="xml-apis" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xml-apis-ext-1.3.04.jar" download="lazy" part="xml-apis-ext" version="1.3.04"/> 
+			<package name="org.w3c.css.sac.*" part="xml-apis-ext" recursive="true"/> 
+			<package name="org.w3c.dom.smil.*" part="xml-apis-ext" recursive="true"/> 
+			<package name="org.w3c.dom.svg.*" part="xml-apis-ext" recursive="true"/> 
+	</resources> 
+	<component-desc></component-desc> 
+	<security>
+		<all-permissions/>
+	</security>
+</jnlp>
