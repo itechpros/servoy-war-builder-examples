@@ -1,0 +1,16 @@
+name: Servoy Build                            # Name of the workflow that will appear on the Actions tab in GitHub
+on: push                                      # Run the build whenever commits are pushed to the repository
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout                         # Checkout the Git repository into the Action runner
+       uses: actions/checkout@v2
+     - name: Servoy Build                     # Build the WAR file
+       uses: itechpros/servoy-war-builder@v1
+       with:
+         servoy-version: 2023.03.2.3844
+         api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
+         solution-name: HelloWorld
+         default-admin-user: ${{ secrets.DEFAULT_ADMIN_USER }}
+         default-admin-password: ${{ secrets.DEFAULT_ADMIN_PASSWORD }}
