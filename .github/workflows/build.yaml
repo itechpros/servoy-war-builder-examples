@@ -6,6 +6,7 @@ jobs:
     steps:
      - name: Checkout                                                   # Checkout the Git repository into the Action runner
        uses: actions/checkout@v2
+
      - name: Servoy Build                                               # Build the WAR file
        uses: itechpros/servoy-war-builder@v1
        with:
@@ -24,6 +25,7 @@ jobs:
          allow-data-model-changes: all                                  # Allow Servoy to modify the database structure to match what's in the DBI files on all database servers
          import-user-policy: 0                                          # Don't import or update any users that are in this repository (resources project)
          extras-folder: ServoyDeveloperExtras                           # Use the folder "ServoyDeveloperExtras" as the folder that contains our extra JARs, drivers, etc. that should be included in the build
+
      - name: Push release                                              # Create a release in GitHub that contains our generated WAR file, so you can download it.
        uses: softprops/action-gh-release@v1
        if: startsWith(github.ref, 'refs/tags/')                        # Only create releases when a tag (not a branch or commit) is pushed up (necessary for this GitHub Action)
