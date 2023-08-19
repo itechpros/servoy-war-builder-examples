@@ -1,4 +1,6 @@
-# Servoy WAR Builder Examples
+# Servoy WAR Builder Example
+Cloud Sample Soluion in Servoy Version: 2022.3.4.3746_LTS
+Deploying to DigitalOcean via the Tomcat Manager UI/API
 
 ## Project Structure
 
@@ -6,11 +8,8 @@
 **Path**: .github/workflows/build.yaml  
 This is the [GitHub Action workflow file](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) that defines an automated process made up of one or more jobs. For more details of the available options for the WAR build in this file, please see our [servoy-war-builder](https://github.com/itechpros/servoy-war-builder) repository.
 
-### HelloWorld
-This is the primary Servoy solution for our project. It contains one form and just outputs a "Hello World!" message.
-
-### mod_batch_processor
-This is a Servoy solution that we need included in our WAR file, but is not directly referenced by the HelloWorld solution.
+### cloudSampleSolution
+This is the primary Servoy solution for our project.
 
 ### servoy.build.properties
 **Path:** prop_files/servoy.build.properties  

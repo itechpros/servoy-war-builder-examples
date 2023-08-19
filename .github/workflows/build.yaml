@@ -1,8 +1,12 @@
 name: Servoy Build                                                      # Name of the workflow that will appear on the Actions tab in GitHub
-on: push                                                                # Run the build whenever commits are pushed to the repository
-jobs:
+on: 
+  push:
+    branches:
+      - examples/DigitaloOcean/managerPush   
+jobs:                           # Run the build only on this branch
   build:
     runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[war]')"           # Run only if [war] is in the commit message
     steps:
      - name: Checkout                                                   # Checkout the Git repository into the Action runner
        uses: actions/checkout@v2
@@ -10,37 +14,21 @@ jobs:
      - name: Servoy Build                                               # Build the WAR file
        uses: itechpros/servoy-war-builder@v1
        with:
-         servoy-version: 2023.03.2.3844
+         servoy-version: 2022.03.4.3746
          api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
-         solution-name: HelloWorld
+         solution-name: cloudSampleSolution
          default-admin-user: ${{ secrets.DEFAULT_ADMIN_USER }}
          default-admin-password: ${{ secrets.DEFAULT_ADMIN_PASSWORD }}
          properties-file: prop_files/servoy.build.properties            # Use servoy.build.properties for the build process (NOT included in the WAR)
          properties-file-war: prop_files/servoy.war.properties          # Use servoy.war.properties for the WAR file (NOT used in the build process)
          dbi: true                                                      # We don't want to open up our firewall for all of GitHub's IPs, so use DBI files instead of trying to connect to the DB
-         additional-solutions: mod_batch_processor                      # mod_batch_processor isn't referenced by HelloWorld, so we need to put it here so it will be included in the WAR
-         i18n: true                                                     # Include our (non-existent) i18n keys in the WAR file (which will be imported when the WAR is deployed)
-         war-file-name: hello.war                                       # Override our WAR file name from "HelloWorld.war" to "hello.war"
+         war-file-name: cloud.war                                       # Override our WAR file name from "HelloWorld.war" to "hello.war"
          allow-sql-keywords: true                                       # Allow columns and tables created via DBIs to contain SQL keywords
          allow-data-model-changes: all                                  # Allow Servoy to modify the database structure to match what's in the DBI files on all database servers
          import-user-policy: 0                                          # Don't import or update any users that are in this repository (resources project)
          extras-folder: ServoyDeveloperExtras                           # Use the folder "ServoyDeveloperExtras" as the folder that contains our extra JARs, drivers, etc. that should be included in the build
-     - name: Create custom name for GitHub tag (current date in yyyyMMdd.HHmm format)
-       run: |
-         tag_name=$(date '+%Y%m%d.%H%M')
-         echo "CUSTOM_TAG_NAME=${tag_name}" >> $GITHUB_ENV
-     - name: Create tag for release
-       uses: actions/github-script@v5
+     - name: Push war to Tomcat Manager at DigitalOcean                 # Create a release in GitHub that contains our generated WAR file, so you can download it.
+       uses: enflo/curl-action@master
        with:
-         script: |
-           github.rest.git.createRef({
-             owner: context.repo.owner,
-             repo: context.repo.repo,
-             ref: `refs/tags/${process.env.CUSTOM_TAG_NAME}`,
-             sha: context.sha
-           })
-     - name: Push release                                              # Create a release in GitHub that contains our generated WAR file, so you can download it.
-       uses: softprops/action-gh-release@v1
-       with:
-         tag_name: ${{ env.CUSTOM_TAG_NAME }}
-         files: hello.war
+         curl: --upload-file cloud.war https://${{ secrets.TOMCAT_USERNAME }}:${{ secrets.TOMCAT_PASSWORD }}@urchin-app-u5ytl.ondigitalocean.app/manager/deploy?path=/cloud&update=true
+
