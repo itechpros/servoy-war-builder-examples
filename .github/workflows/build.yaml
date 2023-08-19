@@ -1,5 +1,8 @@
 name: Servoy Build                                                      # Name of the workflow that will appear on the Actions tab in GitHub
-on: push                                                                # Run the build whenever commits are pushed to the repository
+on: 
+  push:
+    branches:
+      - master                                                          # Run the build whenever commits are pushed to the master branch
 jobs:
   build:
     runs-on: ubuntu-latest
