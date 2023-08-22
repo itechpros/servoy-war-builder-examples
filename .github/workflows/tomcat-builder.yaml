@@ -1,0 +1,36 @@
+name: Tomcat Tester
+on: 
+  push:
+    branches:
+      - tomcat-builder
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v2
+
+     - name: Servoy Build
+       uses: itechpros/servoy-war-builder@v1
+       with:
+         servoy-version: 2023.03.2.3844
+         api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
+         solution-name: HelloWorld
+         default-admin-user: ${{ secrets.DEFAULT_ADMIN_USER }}
+         default-admin-password: ${{ secrets.DEFAULT_ADMIN_PASSWORD }}
+         properties-file: prop_files/servoy.build.properties
+         properties-file-war: prop_files/servoy.war.properties
+         dbi: true
+         additional-solutions: mod_batch_processor
+         i18n: true
+         war-file-name: hello.war
+         allow-sql-keywords: true
+         allow-data-model-changes: all
+         import-user-policy: 0
+         extras-folder: ServoyDeveloperExtras
+     - name: Tomcat Image Build
+       uses: itechpros/servoy-tomcat-builder@main
+       with:
+         tomcat-version: 10
+         java-version: 11
+         war-file: hello.war
