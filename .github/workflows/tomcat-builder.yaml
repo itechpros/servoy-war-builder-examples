@@ -28,6 +28,7 @@ jobs:
          allow-data-model-changes: all
          import-user-policy: 0
          extras-folder: ServoyDeveloperExtras
+         ng2: false
      - name: Tomcat Image Build
        uses: itechpros/servoy-tomcat-builder@main
        with:
