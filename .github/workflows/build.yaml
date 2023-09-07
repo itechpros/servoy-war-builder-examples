@@ -27,8 +27,15 @@ jobs:                           # Run the build only on this branch
          allow-data-model-changes: all                                  # Allow Servoy to modify the database structure to match what's in the DBI files on all database servers
          import-user-policy: 0                                          # Don't import or update any users that are in this repository (resources project)
          extras-folder: ServoyDeveloperExtras                           # Use the folder "ServoyDeveloperExtras" as the folder that contains our extra JARs, drivers, etc. that should be included in the build
-     - name: Push war to Tomcat Manager at DigitalOcean                 # Create a release in GitHub that contains our generated WAR file, so you can download it.
-       uses: enflo/curl-action@master
+     - name: Docker Login
+       uses: docker/login-action@v2
        with:
-         curl: --upload-file cloud.war https://${{ secrets.TOMCAT_USERNAME }}:${{ secrets.TOMCAT_PASSWORD }}@urchin-app-u5ytl.ondigitalocean.app/manager/deploy?path=/cloud&update=true
-
+         registry: registry.digitalocean.com
+         username: ${{ secrets.DIGITALOCEAN_TOKEN }}
+         password: ${{ secrets.DIGITALOCEAN_TOKEN }}
+     - name: Tomcat Image Build
+       uses: itechpros/servoy-tomcat-builder@main
+       with:
+         tomcat-version: 10
+         java-version: 11
+         war-file: cloud.war
