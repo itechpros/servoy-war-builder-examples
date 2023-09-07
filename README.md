@@ -1,6 +1,6 @@
 # Servoy WAR Builder Example
 Cloud Sample Soluion in Servoy Version: 2022.3.4.3746_LTS
-Deploying to DigitalOcean via the Tomcat Manager UI/API
+Deploying to DigitalOcean via the container registry
 
 ## Project Structure
 
