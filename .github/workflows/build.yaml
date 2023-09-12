@@ -39,4 +39,4 @@ jobs:                           # Run the build only on this branch
          tomcat-version: 10
          java-version: 11
          war-file: cloud.war
-         image-name: registry.digitalocean.com/svytest
+         image-name: registry.digitalocean.com/svytest/servoy-tomcat
