@@ -13,7 +13,7 @@ jobs:
      - name: Servoy Build
        uses: itechpros/servoy-war-builder@v1
        with:
-         servoy-version: 2023.03.2.3844
+         servoy-version: 2022.03.4.3746
          api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
          solution-name: HelloWorld
          default-admin-user: ${{ secrets.DEFAULT_ADMIN_USER }}
