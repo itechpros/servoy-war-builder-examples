@@ -2,7 +2,7 @@ name: Servoy Build                                                      # Name o
 on: 
   push:
     branches:
-      - examples/DigitaloOcean/managerPush   
+      - examples/DigitaloOcean/containerRegistry   
 jobs:                           # Run the build only on this branch
   build:
     runs-on: ubuntu-latest
