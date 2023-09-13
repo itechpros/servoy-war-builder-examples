@@ -39,5 +39,5 @@ jobs:
        uses: itechpros/servoy-tomcat-builder@main
        with:
          tomcat-version: 10
-         java-version: 11
+         java-version: 17
          war-file: hello.war
