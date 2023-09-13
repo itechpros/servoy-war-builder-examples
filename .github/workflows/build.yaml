@@ -36,7 +36,7 @@ jobs:                           # Run the build only on this branch
      - name: Tomcat Image Build
        uses: itechpros/servoy-tomcat-builder@main
        with:
-         tomcat-version: 10
-         java-version: 11
+         tomcat-version: 9
+         java-version: 17
          war-file: cloud.war
          image-name: registry.digitalocean.com/svytest/servoy-tomcat
