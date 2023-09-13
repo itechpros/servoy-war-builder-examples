@@ -38,6 +38,6 @@ jobs:
      - name: Tomcat Image Build
        uses: itechpros/servoy-tomcat-builder@main
        with:
-         tomcat-version: 10
+         tomcat-version: 9
          java-version: 17
          war-file: hello.war
