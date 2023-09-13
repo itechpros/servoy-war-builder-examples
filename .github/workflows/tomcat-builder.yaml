@@ -25,6 +25,7 @@ jobs:
          allow-data-model-changes: all
          import-user-policy: 0
          extras-folder: ServoyDeveloperExtras
+         ng2: false
      - name: Docker Login
        uses: docker/login-action@v2
        with:
