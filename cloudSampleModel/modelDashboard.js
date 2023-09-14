@@ -1,5 +1,5 @@
 /**
- *
+ * 
  * This method is used to get total revenue in a specific date range
  *
  * @param {Date} startDate
