@@ -31,7 +31,7 @@ jobs:                           # Run the build only on this branch
        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
        with:
          username: ${{ secrets.FTP_USER }}
-         password: ${{ secrets.FTP_USER }}
+         password: ${{ secrets.FTP_PASS }}
          server: 'devu.co'
          local_path: 'hello.war'
          remote_path: '/home/itech_paul/devu.co/temp'
