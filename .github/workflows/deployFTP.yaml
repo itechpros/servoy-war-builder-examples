@@ -27,6 +27,7 @@ jobs:                           # Run the build only on this branch
          allow-data-model-changes: all                                  # Allow Servoy to modify the database structure to match what's in the DBI files on all database servers
          import-user-policy: 0                                          # Don't import or update any users that are in this repository (resources project)
          extras-folder: ServoyDeveloperExtras                           # Use the folder "ServoyDeveloperExtras" as the folder that contains our extra JARs, drivers, etc. that should be included in the build
+         
      - name: deploy file
        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
        with:
