@@ -34,5 +34,5 @@ jobs:                           # Run the build only on this branch
          username: ${{ secrets.FTP_USER }}
          password: ${{ secrets.FTP_PASS }}
          server: 'devu.co'
-         local_path: 'hello.war'
+         local_path: 'cloud.war'
          remote_path: '/home/itech_paul/devu.co/temp'
