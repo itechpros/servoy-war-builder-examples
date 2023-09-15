@@ -11,7 +11,7 @@ jobs:
        uses: actions/checkout@v2
 
      - name: Servoy Build
-       uses: itechpros/servoy-war-builder@v1
+       uses: itechpros/servoy-war-builder@main
        with:
          servoy-version: 2023.03.2.3844
          api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
