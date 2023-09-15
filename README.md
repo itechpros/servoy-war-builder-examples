@@ -1,6 +1,6 @@
 # Servoy WAR Builder Example
 Cloud Sample Soluion in Servoy Version: 2022.3.4.3746_LTS
-Deploying to DigitalOcean via the container registry
+Deploying to Azure via the container registry
 
 ## Project Structure
 
@@ -14,10 +14,6 @@ This is the primary Servoy solution for our project.
 ### servoy.build.properties
 **Path:** prop_files/servoy.build.properties  
 This is the Servoy properties file that is used during the build process.
-
-### servoy.war.properties
-**Path:** prop_files/servoy.war.properties  
-This is the Servoy properties file that is bundled into the WAR.
 
 ### resources
 This is the Servoy resources project that contains the DBI files, i18n messages, users & groups, and other information. To include your resources project into your Git directory, open Servoy Developer. Make sure you're on the Servoy Design perspective, then in the Solution Explorer, right-click the Resources node at the top and click Team->Share Project.
