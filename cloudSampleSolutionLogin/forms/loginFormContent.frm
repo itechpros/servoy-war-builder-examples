@@ -68,7 +68,7 @@ right:"30",
 top:"229",
 width:"100"
 },
-text:"Username"
+text:"User"
 },
 name:"lblUsername",
 typeName:"bootstrapcomponents-label",
