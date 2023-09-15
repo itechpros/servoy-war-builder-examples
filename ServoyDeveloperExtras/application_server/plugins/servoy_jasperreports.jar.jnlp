@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="%%serverURL%%" href="/servoy-client/plugins/servoy_jasperreports.jar.jnlp">
+	<information>
+		<title>Servoy Client Plugins</title>
+		<vendor>Servoy and Others</vendor>
+	</information>
+	<resources> 
+		<j2se version="1.6+"/>
+		<jar href="/plugins/servoy_jasperreports.jar" download="eager" version="%%version%%"/>
+		<extension href="/plugins/servoy_jasperreports_commons.jar.jnlp" name="servoy_jasperreports_commons.jar" version="%%version%%"/>
+		<jar href="/plugins/servoy_jasperreports/jasperreports-6.20.0.jar" download="eager"/>
+		<jar href="/plugins/servoy_jasperreports/commons-beanutils-1.9.4.jar" download="lazy" part="commons-beanutils" version="1.9.4"/> 
+			<package name="org.apache.commons.beanutils.*" part="commons-beanutils" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-collections-3.2.2.jar" download="lazy" part="commons-collections3" version="3.2.2"/> 
+			<package name="org.apache.commons.collections.*" part="commons-collections3" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-digester-2.1.jar" download="lazy" part="commons-digester" version="2.1"/> 
+			<package name="org.apache.commons.digester.*" part="commons-digester" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/commons-logging-1.1.1.jar" download="lazy" part="commons-logging" version="1.1.1"/> 
+			<package name="org.apache.commons.logging.*" part="commons-logging" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/groovy-3.0.7.jar" download="lazy" part="groovy" version="3.0.7"/> 
+			<package name="org.codehaus.groovy.*" part="groovy" recursive="true"/> 
+			<package name="groovy.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarantlr.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarasm.asm.*" part="groovy" recursive="true"/> 
+			<package name="groovyjarjarcommonscli.*" part="groovy" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/jasperreports-functions-6.20.0.jar" download="lazy" part="jasperreports-functions" version="6.20.0"/> 
+			<package name="net.sf.jasperreports.functions.*" part="jasperreports-functions" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/jcommon-1.0.23.jar" download="lazy" part="jcommon" version="1.0.23"/> 
+			<package name="com.keypoint.*" part="jcommon" recursive="true"/> 
+			<package name="org.jfree.*" part="jcommon" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/ecj-3.21.0.jar" download="lazy" part="jdt-compiler" version="3.21.0"/> 
+			<package name="org.eclipse.jdt.*" part="jdt-compiler" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/jfreechart-1.0.19.jar" download="lazy" part="jfreechart" version="1.0.19"/> 
+			<package name="org.jfree.*" part="jfreechart" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/serializer-2.7.2.jar" download="lazy" part="serializer" version="2.7.2"/> 
+			<package name="org.apache.xml.serializer.*" part="serializer" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xalan-2.7.2.jar" download="lazy" part="xalan" version="2.7.2"/> 
+			<package name="org.apache.*" part="xalan" recursive="true"/> 
+			<package name="java_cup.runtime.*" part="xalan" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xml-apis-1.4.01.jar" download="lazy" part="xml-apis" version="1.4.01"/> 
+			<package name="javax.xml.*" part="xml-apis" recursive="true"/> 
+			<package name="org.w3c.dom.*" part="xml-apis" recursive="true"/> 
+			<package name="org.xml.sax.*" part="xml-apis" recursive="true"/> 
+			<package name="org.apache.xmlcommons.Version" part="xml-apis" recursive="true"/> 
+		<jar href="/plugins/servoy_jasperreports/xml-apis-ext-1.3.04.jar" download="lazy" part="xml-apis-ext" version="1.3.04"/> 
+			<package name="org.w3c.css.sac.*" part="xml-apis-ext" recursive="true"/> 
+			<package name="org.w3c.dom.smil.*" part="xml-apis-ext" recursive="true"/> 
+			<package name="org.w3c.dom.svg.*" part="xml-apis-ext" recursive="true"/> 
+	</resources> 
+	<component-desc></component-desc> 
+	<security>
+		<all-permissions/>
+	</security>
+</jnlp>
