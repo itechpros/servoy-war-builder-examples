@@ -40,3 +40,5 @@ jobs:                           # Run the build only on this branch
          java-version: 17
          war-file: cloud.war
          image-name: registry.digitalocean.com/svytest/servoy-tomcat
+env:
+  DIGITALOCEAN_PG_PASSWORD: ${{ secrets.DIGITALOCEAN_PG_PASSWORD }}
