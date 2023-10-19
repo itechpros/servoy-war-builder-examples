@@ -35,4 +35,3 @@ This folder contains drivers that aren't included in a typical Servoy install.
 
 #### plugins
 This folder contains plugins that aren't included in a typical Servoy install.
-
