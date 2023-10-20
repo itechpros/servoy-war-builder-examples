@@ -26,7 +26,6 @@ jobs:
          import-user-policy: 0
          extras-folder: ServoyDeveloperExtras
          ng2: false
-         timeout: 1000
      - name: Docker Login
        uses: docker/login-action@v2
        with:
