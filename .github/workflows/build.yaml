@@ -11,7 +11,7 @@ jobs:
        uses: actions/checkout@v2
 
      - name: Servoy Build                                               # Build the WAR file
-       uses: itechpros/servoy-war-builder@v1
+       uses: itechpros/servoy-war-builder@main
        with:
          servoy-version: 2023.03.2.3844
          api-key: ${{ secrets.ALL_PRODUCTS_PACK_KEY }}
@@ -28,6 +28,7 @@ jobs:
          allow-data-model-changes: all                                  # Allow Servoy to modify the database structure to match what's in the DBI files on all database servers
          import-user-policy: 0                                          # Don't import or update any users that are in this repository (resources project)
          extras-folder: ServoyDeveloperExtras                           # Use the folder "ServoyDeveloperExtras" as the folder that contains our extra JARs, drivers, etc. that should be included in the build
+         post-war-extras-folder: PostWarExtras                          # Use the folder "PostWarExtras" as the folder that contains files & folders that should be copied into the WAR after it is built.
      - name: Create custom name for GitHub tag (current date in yyyyMMdd.HHmm format)
        run: |
          tag_name=$(date '+%Y%m%d.%H%M')
