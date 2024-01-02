@@ -27,6 +27,7 @@ jobs:
          extras-folder: ServoyDeveloperExtras
          ng2: false
          post-war-extras-folder: PostWarExtras
+         build-max-memory: 4096m
      - name: Docker Login
        uses: docker/login-action@v2
        with:
